@@ -1,0 +1,6 @@
+-sname brender_erl_server
+
+-setcookie brender_erl_server_cookie
+
++K true
++A30
