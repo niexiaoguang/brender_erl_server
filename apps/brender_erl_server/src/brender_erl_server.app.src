@@ -8,7 +8,8 @@
     stdlib,
     cowboy,
     amqp_client,
-    jsone
+    jsone,
+    mysql
    ]},
   {env,[]},
   {modules, []},

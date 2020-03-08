@@ -13,7 +13,9 @@ echo(<<"GET">>, undefined, Req) ->
 	% 172.18.0.1 is get by 
 	% pata@ubuntu:~$ ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1' | head -n 1 
 	% just like nginx reverse proxy settings
-	{ok, Connection} = amqp_connection:start(#amqp_params_network{host = "172.18.0.1"}),
+
+	% 10.0.2.2 is get by ifconfig to get local gateway with virtualbox network set as NAT
+	{ok, Connection} = amqp_connection:start(#amqp_params_network{host = "10.0.2.2"}),
     {ok, Channel} = amqp_connection:open_channel(Connection),
 
     amqp_channel:call(Channel, #'queue.declare'{queue = <<"hello">>}),

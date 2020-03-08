@@ -1,0 +1,32 @@
+FROM erlang:22.2.8-alpine
+
+MAINTAINER Pampa Nie "nxg@lohosoft.com"
+
+ARG USER_ID
+ARG GROUP_ID
+
+# Copy source to container
+RUN mkdir -p /usr/app/src
+
+COPY . /usr/app
+
+WORKDIR /usr/app
+
+# install with local servers
+
+# Create a group for ********* alpine ***********
+RUN addgroup -S $GROUP_ID 
+
+# Create a user under group
+RUN adduser -S -D -h /usr/app/ $USER_ID -G $GROUP_ID
+
+# Chown all the files to the app user.
+RUN chown -R $USER_ID:$GROUP_ID /usr/app
+
+# Switch to user
+USER $USER_ID
+
+# mark ts for change code 
+RUN echo "20200307" >> /dev/null
+
+CMD /bin/sh 
