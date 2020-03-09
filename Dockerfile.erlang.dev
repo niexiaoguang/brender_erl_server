@@ -26,6 +26,8 @@ RUN chown -R $USER_ID:$GROUP_ID /usr/app
 # Switch to user
 USER $USER_ID
 
+ENV REBAR_CACHE_DIR /usr/app
+
 # mark ts for change code 
 RUN echo "20200307" >> /dev/null
 

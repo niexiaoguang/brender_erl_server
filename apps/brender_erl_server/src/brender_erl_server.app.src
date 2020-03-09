@@ -9,7 +9,7 @@
     cowboy,
     amqp_client,
     jsone,
-    mysql
+    erlavro
    ]},
   {env,[]},
   {modules, []},
