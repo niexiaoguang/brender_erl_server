@@ -28,7 +28,9 @@ USER $USER_ID
 
 ENV REBAR_CACHE_DIR /usr/app
 
+
+
 # mark ts for change code 
-RUN echo "20200307" >> /dev/null
+RUN echo "20200318" >> /dev/null
 
 CMD /bin/sh 

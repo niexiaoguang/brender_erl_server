@@ -14,5 +14,5 @@ docker build -t erl_dev --build-arg USER_ID=$(id -u) --build-arg GROUP_ID=$(id -
 
 
 run docker dev :
-docker run --rm -u $(id -u):$(id -g) -it -v $(pwd):/usr/app erl_dev
 
+docker run --rm -u $(id -u):$(id -g) -it -p 9000:9000 --expose 5672 -v $(pwd):/usr/app erl_dev
